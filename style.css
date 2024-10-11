@@ -232,3 +232,30 @@ input[type=checkbox]:checked::before {
     background-color: var(--true);
     left: calc(100% - (20px/2 + 5px));
 }
+
+.leftBaykPage{
+    display: block !important;
+}
+.rightBaykPage{
+    display: none;
+}
+
+.leftBaykPage, .rightBaykPage {
+    display: flex;
+    width: 100%;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.leftBaykPage .productMainBox{
+    margin-bottom: 10px;
+}
+
+.rightBaykPage .productMainBox{
+    margin-bottom: 10px;
+}
+
+.rightPageListMainBox{
+    width: 100%;
+}
