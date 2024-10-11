@@ -52,7 +52,10 @@ header .item img {
     border-radius: 13px;
     object-fit: cover;
     transition: .4s ease;
+    scale: 1;
 }
+
+
 
 
 .searchIcon {
@@ -83,18 +86,12 @@ header .item img {
     background: #282829a2;
     border-radius: 6px;
     color: white;
+    scale: 1;
 
     transition: 0.4s ease;
 
 }
 
-/* Масштабирование при наведении на десктопе */
-header .item img:hover,
-.searchBlockWidth .itemSearch:hover,
-.productMainBox:hover {
-    scale: 0.9;
-    transition: 0.4s ease;
-}
 
 
 
@@ -146,6 +143,7 @@ header .item img:hover,
     border-radius: 10px;
     padding-bottom: 10px;
     flex-shrink: 0;
+    scale: 1;
 
     transition: .4s ease;
 }
