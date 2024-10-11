@@ -118,22 +118,25 @@ header .item img:hover {
     overflow: auto;
     cursor: pointer;
 }
-.secondBox{
+
+.secondBox {
     max-width: 100%;
     display: flex;
     gap: 10px;
     align-items: center;
     justify-content: space-between;
     overflow: auto;
-    cursor: pointer;  
-    margin-top: 20px; 
+    cursor: pointer;
+    margin-top: 20px;
 }
 
-.firstBox::-webkit-scrollbar,  .secondBox::-webkit-scrollbar {
+.firstBox::-webkit-scrollbar,
+.secondBox::-webkit-scrollbar {
     display: none;
 }
 
-.popularProduct h1 {
+.popularProduct h1,
+.baykPage h1 {
     margin: 0 0 10px 0;
     font-size: 17px;
     color: white;
@@ -147,7 +150,7 @@ header .item img:hover {
     border-radius: 10px;
     padding-bottom: 10px;
     flex-shrink: 0;
-    
+
     transition: .4s ease;
 }
 
@@ -184,4 +187,48 @@ header .item img:hover {
 
 .cashArend p {
     font-weight: 500;
+}
+
+
+
+
+.baykTogglePage{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* //////////toggleInp/////////// */
+.switch {
+    --false: #E81B1B;
+    --true: #009068;
+}
+
+input[type=checkbox] {
+    appearance: none;
+    height: 25px;
+    width: 50px;
+    background-color: #fff;
+    position: relative;
+    border-radius: .2em;
+    cursor: pointer;
+}
+
+input[type=checkbox]::before {
+    content: '';
+    display: block;
+    height: 20px;
+    width: 20px;
+    transform: translate(-50%, -50%);
+    position: absolute;
+    top: 50%;
+    left: calc(1.9em/2 + .3em);
+    background-color: var(--false);
+    border-radius: .2em;
+    transition: .3s ease;
+}
+
+input[type=checkbox]:checked::before {
+    background-color: var(--true);
+    left: calc(100% - (20px/2 + 5px));
 }
