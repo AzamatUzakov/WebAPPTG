@@ -233,14 +233,11 @@ input[type=checkbox]:checked::before {
     left: calc(100% - (20px/2 + 5px));
 }
 
-.leftBaykPage{
-    display: block !important;
-}
 .rightBaykPage{
     display: none;
 }
 
-.leftBaykPage, .rightBaykPage {
+.leftBaykPage{
     display: flex;
     width: 100%;
     flex-wrap: wrap;
