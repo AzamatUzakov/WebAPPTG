@@ -13,7 +13,7 @@ body {
 
 main {
     max-width: 600px;
-    height: 100vh;
+    height: 100%;
     margin: 0 auto;
 }
 
@@ -52,7 +52,16 @@ header .item {
 header .item img {
     border-radius: 13px;
     object-fit: cover;
+    transition: .4s ease;
 }
+
+header .item img:hover {
+    scale: 0.9;
+    /* Установите желаемое значение (от 0 до 1) */
+    transition: 0.4s ease;
+}
+
+
 
 .searchIcon {
     display: flex;
@@ -70,16 +79,109 @@ header .item img {
     overflow-x: scroll;
     gap: 10px;
     cursor: pointer;
-margin-top: 10px;
+    margin-top: 10px;
 }
 
 .searchBlockWidth::-webkit-scrollbar {
     display: none;
 }
 
-.searchBlockWidth .itemSearch{
-    padding:  5px 8px;
+.searchBlockWidth .itemSearch {
+    padding: 5px 8px;
     background: #282829a2;
     border-radius: 6px;
     color: white;
+
+    transition: 0.4s ease;
+
+}
+
+
+.searchBlockWidth .itemSearch:hover {
+    scale: 0.9;
+    transition: 0.4s ease;
+}
+
+
+.allPageContainer {
+    margin-top: 20px;
+    padding: 20px 0;
+    min-height: 200px;
+}
+
+.firstBox {
+    max-width: 100%;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    justify-content: space-between;
+    overflow: auto;
+    cursor: pointer;
+}
+.secondBox{
+    max-width: 100%;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    justify-content: space-between;
+    overflow: auto;
+    cursor: pointer;  
+    margin-top: 20px; 
+}
+
+.firstBox::-webkit-scrollbar,  .secondBox::-webkit-scrollbar {
+    display: none;
+}
+
+.popularProduct h1 {
+    margin: 0 0 10px 0;
+    font-size: 17px;
+    color: white;
+    font-weight: 600;
+}
+
+.productMainBox {
+    width: 160px !important;
+    height: 100%;
+    background-color: white;
+    border-radius: 10px;
+    padding-bottom: 10px;
+    flex-shrink: 0;
+    
+    transition: .4s ease;
+}
+
+.productMainBox:hover {
+    scale: 0.9;
+    transition: .4s ease;
+}
+
+.productMainBox img {
+    width: 100%;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+.productMainBox h4 {
+    font-size: 13px;
+    font-weight: 600;
+    margin-left: 4px;
+    margin-top: 10px;
+}
+
+.plusplus {
+    margin-left: 5px;
+    font-size: 13px;
+    font-weight: 500;
+}
+
+.cashArend {
+    font-size: 9px;
+    margin-left: 4px;
+    margin-top: 6px;
+    margin-bottom: 10px;
+}
+
+.cashArend p {
+    font-weight: 500;
 }

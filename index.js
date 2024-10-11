@@ -1,25 +1,39 @@
-const cart = [];
-document.querySelectorAll('.product button').forEach(button => {
-    button.addEventListener('click', function() {
-        const product = this.closest('.product');
-        const productId = product.getAttribute('data-id');
-        const productName = product.querySelector('h2').innerText;
-        cart.push({ id: productId, name: productName });
-        updateCart();
-    });
-});
+document.addEventListener('DOMContentLoaded', () => {
+    // Получаем все кнопки и страницы
+    const buttons = document.querySelectorAll('.itemSearch, .item');
+    const pages = {
+        'popularProduct': document.querySelector('.popularProduct'),
+        'pageBaykBtn': document.querySelector('.baykPage'),
+        'pageAutoBtn': document.querySelector('.autoPage'),
+        'pageYaxtaBtn': document.querySelector('.yaxtaPage'),
+        'pageTranferBtn': document.querySelector('.tranferPage'),
+        'pageTicketBtn': document.querySelector('.ticketPage')
+    };
 
-function updateCart() {
-    const cartItems = document.getElementById('cart-items');
-    cartItems.innerHTML = '';
-    cart.forEach(item => {
-        const li = document.createElement('li');
-        li.textContent = item.name;
-        cartItems.appendChild(li);
-    });
-}
+    // Функция для скрытия всех страниц
+    function hideAllPages() {
+        Object.values(pages).forEach(page => {
+            page.style.display = 'none';
+        });
+    }
 
-document.getElementById('checkout').addEventListener('click', function() {
-    const cartData = JSON.stringify(cart);
-    window.Telegram.WebApp.sendData(cartData); // Отправка данных боту
+    // Функция для показа нужной страницы
+    function showPage(buttonId) {
+        hideAllPages();
+        pages[buttonId].style.display = 'block';
+    }
+
+    // Назначаем обработчик клика на все кнопки
+    buttons.forEach(button => {
+        button.addEventListener('click', () => {
+            const buttonId = button.id;
+            if (pages[buttonId]) {
+                showPage(buttonId);
+            }
+        });
+    });
+
+    // Изначально показываем страницу popularProduct
+    hideAllPages();
+    showPage('popularProduct');
 });
