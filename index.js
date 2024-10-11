@@ -33,7 +33,35 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // Изначально показываем страницу popularProduct
     hideAllPages();
     showPage('popularProduct');
+});
+
+
+document.addEventListener('DOMContentLoaded', function() {
+    
+    const hoverElements = document.querySelectorAll('header .item img, .searchBlockWidth .itemSearch, .productMainBox');
+
+    hoverElements.forEach(function(el) {
+        
+        el.addEventListener('mousedown', function() {
+            el.style.transform = 'scale(0.9)';  
+            el.style.transition = 'transform 0.2s ease';
+        });
+
+        
+        el.addEventListener('mouseup', function() {
+            el.style.transform = 'scale(1)';
+        });
+
+        
+        el.addEventListener('touchstart', function() {
+            el.style.transform = 'scale(0.9)';  
+            el.style.transition = 'transform 0.2s ease';  
+        });
+
+        el.addEventListener('touchend', function() {
+            el.style.transform = 'scale(1)'; 
+        });
+    });
 });

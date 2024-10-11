@@ -54,13 +54,6 @@ header .item img {
     transition: .4s ease;
 }
 
-header .item img:hover {
-    scale: 0.9;
-    /* Установите желаемое значение (от 0 до 1) */
-    transition: 0.4s ease;
-}
-
-
 
 .searchIcon {
     display: flex;
@@ -95,11 +88,15 @@ header .item img:hover {
 
 }
 
-
-.searchBlockWidth .itemSearch:hover {
+/* Масштабирование при наведении на десктопе */
+header .item img:hover,
+.searchBlockWidth .itemSearch:hover,
+.productMainBox:hover {
     scale: 0.9;
     transition: 0.4s ease;
 }
+
+
 
 
 .allPageContainer {
@@ -153,10 +150,6 @@ header .item img:hover {
     transition: .4s ease;
 }
 
-.productMainBox:hover {
-    scale: 0.9;
-    transition: .4s ease;
-}
 
 .productMainBox img {
     width: 100%;
